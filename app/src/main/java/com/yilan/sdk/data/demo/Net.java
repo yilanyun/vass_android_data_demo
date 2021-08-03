@@ -29,7 +29,7 @@ import okhttp3.Response;
  */
 public class Net {
     public static final Net REQUEST = new Net();
-    private final String baseUrl = "https://api.yilanvaas.cn/mallen";
+    private final String baseUrl = "https://api.yilanvaas.cn";
     private final String basePlayUrl = "http://play.yilanvaas.cn";
     private final OkHttpClient client;
     private final AESUtil aesUtil = new AESUtil(App.YL_TOKEN, App.YL_TOKEN);
