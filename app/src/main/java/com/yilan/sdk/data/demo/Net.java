@@ -4,12 +4,14 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -27,7 +29,7 @@ import okhttp3.Response;
  */
 public class Net {
     public static final Net REQUEST = new Net();
-    private final String baseUrl = "http://testapi.yladm.com/mallen";
+    private final String baseUrl = "https://api.yilanvaas.cn/mallen";
     private final String basePlayUrl = "http://play.yilanvaas.cn";
     private final OkHttpClient client;
     private final AESUtil aesUtil = new AESUtil(App.YL_TOKEN, App.YL_TOKEN);
@@ -284,7 +286,10 @@ public class Net {
             return deviceID;
         } catch (Exception e) {
         }
-        return "";
+        if (TextUtils.isEmpty(deviceID)) {
+            deviceID = UUID.randomUUID().toString();
+        }
+        return deviceID;
     }
 
     private String getSign(long timestamp, String data) {
