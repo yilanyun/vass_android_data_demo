@@ -8,8 +8,8 @@ import android.app.Application;
  */
 public class App extends Application {
     public static App app;
-    public static final String YL_KEY = "";
-    public static final String YL_TOKEN = "";
+    public static final String YL_KEY = "ylel2vek386q";
+    public static final String YL_TOKEN = "talb5el4cbw3e8ad3jofbknkexi1z8r4";
 
     @Override
     public void onCreate() {

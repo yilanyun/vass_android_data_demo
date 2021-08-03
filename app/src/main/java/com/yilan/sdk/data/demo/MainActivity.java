@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -50,11 +51,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     @Override
                     public void onSuccess(String s) {
                         System.out.println("----video/feed success :" + s);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
                     public void onError(int code, String msg) {
                         System.out.println("----video/feed error :" + code + "," + msg);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 });
                 break;
@@ -63,11 +76,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     @Override
                     public void onSuccess(String s) {
                         System.out.println("----video/channels success :" + s);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
                     public void onError(int code, String msg) {
                         System.out.println("----video/channels error :" + code + "," + msg);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 });
                 break;
@@ -77,11 +102,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     @Override
                     public void onSuccess(String s) {
                         System.out.println("----video/relation success :" + s);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
                     public void onError(int code, String msg) {
                         System.out.println("----video/relation error :" + code + "," + msg);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 });
                 break;
@@ -90,11 +127,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     @Override
                     public void onSuccess(String s) {
                         System.out.println("----video/getvideos success :" + s);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
                     public void onError(int code, String msg) {
                         System.out.println("----video/getvideos error :" + code + "," + msg);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 });
                 break;
@@ -103,11 +152,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     @Override
                     public void onSuccess(String s) {
                         System.out.println("----video/play success :" + s);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
                     public void onError(int code, String msg) {
                         System.out.println("----video/play error :" + code + "," + msg);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 });
                 break;
@@ -117,11 +178,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     @Override
                     public void onSuccess(String s) {
                         System.out.println("----video/cpinfo success :" + s);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
                     public void onError(int code, String msg) {
                         System.out.println("----video/cpinfo error :" + code + "," + msg);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 });
                 break;
@@ -131,14 +204,31 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     @Override
                     public void onSuccess(String s) {
                         System.out.println("----video/cpvideos success :" + s);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
                     public void onError(int code, String msg) {
                         System.out.println("----video/cpvideos error :" + code + "," + msg);
+                        view.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
                     }
                 });
                 break;
         }
+    }
+
+    public void showToast(String s) {
+
     }
 }
